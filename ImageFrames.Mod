@@ -72,6 +72,10 @@ MODULE ImageFrames; (*CP 2.2019*)
     Restore, Focus, Selected, This, Draw, DrawNorm, Erase,
     DrawObj, EraseObj, Change, Defocus, Deselect, Macro, Open*)
 
+  (* begin-section-description
+## ---------- Oberon Message Handling
+  end-section-description *)
+
   PROCEDURE SetChangeMark(F: Frame; col: INTEGER); (*set mark in corner of frame*)
   BEGIN
     IF F.H > 16 THEN
