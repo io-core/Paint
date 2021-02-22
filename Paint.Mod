@@ -1,9 +1,10 @@
 MODULE Paint; (*CP 3.2019*)
 
-  IMPORT Files, Fonts, Viewers, Texts, Oberon,
-    TextFrames, MenuViewers, Images, ImageFrames;
+  IMPORT Files, Fonts, Viewers, Texts, Oberon, TextFrames, MenuViewers, Images, ImageFrames;
 
   CONST Menu = "System.Close  System.Copy  System.Grow  Paint.Delete  Paint.Ticks  Paint.Restore  Paint.Store";
+
+  TYPE
 
   VAR W: Texts.Writer;
 

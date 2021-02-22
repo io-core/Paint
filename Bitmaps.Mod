@@ -1,12 +1,16 @@
 MODULE Bitmaps; (*TK 8.10.2017 / 7.9.2018 / CP 2.2019*)
-IMPORT SYSTEM, Kernel, Oberon;
+  IMPORT SYSTEM, Kernel, Oberon;
 
-TYPE
-  Bitmap* = POINTER TO BitmapDesc;
-  BitmapDesc* = RECORD
-    width*, height*, depth*: INTEGER;
-    base*, size* : INTEGER
-  END;
+  CONST
+
+  TYPE
+    Bitmap* = POINTER TO BitmapDesc;
+    BitmapDesc* = RECORD
+      width*, height*, depth*: INTEGER;
+      base*, size* : INTEGER
+    END;
+
+  VAR
 
 PROCEDURE New*(B: Bitmap; w, h, dpt: INTEGER) : Bitmap;
 BEGIN (*

@@ -6,7 +6,6 @@ MODULE Images; (*CP 2.2019*)
         JpgFileId = 0D8FFH;
 	PngFileId = 08950H;
         PctFileId = 0F003H;
-
     bmp* = 0; jpg* = 1; png* = 2; pct* = 3; (*filetypes*)
     replace* = 0; insert* = 1; delete* = 2; unmark* = 3;  (*op-codes*)
 
@@ -21,18 +20,6 @@ MODULE Images; (*CP 2.2019*)
       do*: Method;
       next: Layer
     END;
-(*
-    Effect* = POINTER TO EffectDesc;
-    EffectDesc* = RECORD
-    END;
-
-    Application* = POINTER TO ApplictionDesc;
-    ApplicationDesc* = RECORD
-      E: Effect;
-      S1,S2: Layer
-    END;
-
-*)
 
     Image* = POINTER TO ImageDesc;
     Notifier* = PROCEDURE (I: Image; op: INTEGER; beg, end: LONGINT);
@@ -72,8 +59,6 @@ MODULE Images; (*CP 2.2019*)
     END;
 
     MethodDesc* = RECORD
-(*        module*, allocator*: Name;
-        new*: Modules.Command;             *)
         copy*: PROCEDURE (from, to: Layer);
         draw*, change*: PROCEDURE (L: Layer; VAR msg: Msg);
         selectable*: PROCEDURE (L: Layer; x, y: INTEGER): BOOLEAN;
@@ -83,7 +68,7 @@ MODULE Images; (*CP 2.2019*)
       END ;
 
     
-VAR 
+  VAR 
  
   res*: INTEGER;
   width: INTEGER;
